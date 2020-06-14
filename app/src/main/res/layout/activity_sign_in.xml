@@ -7,7 +7,7 @@
     tools:context=".SignIn">
 
     <ImageView
-        android:id="@+id/sign_in_logo"
+        android:id="@+id/iv_sign_in_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -17,34 +17,57 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tv_sign_in_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="@string/tvSignInID"
+        android:textColor="@color/colorErrorRed"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/ed_sign_in_ID"
+        app:layout_constraintStart_toStartOf="@+id/ed_sign_in_ID" />
+
     <EditText
-        android:id="@+id/sign_in_ID"
+        android:id="@+id/ed_sign_in_ID"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_marginTop="50dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
         android:backgroundTint="@color/colorPrimaryDark"
-        android:hint="@string/SignInID"
+        android:hint="@string/edSignInID"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_in_logo" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_sign_in_logo" />
+
+
+    <TextView
+        android:id="@+id/tv_sign_in_PW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="@string/tvSignInPW"
+        android:textColor="@color/colorErrorRed"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/ed_sign_in_PW"
+        app:layout_constraintStart_toStartOf="@+id/ed_sign_in_PW" />
 
     <EditText
-        android:id="@+id/sign_in_PW"
+        android:id="@+id/ed_sign_in_PW"
         android:layout_width="match_parent"
         android:layout_height="45sp"
         android:layout_margin="20sp"
         android:layout_marginTop="96dp"
         android:backgroundTint="@color/colorPrimaryDark"
-        android:hint="@string/SignInID"
+        android:hint="@string/edSignInPW"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_in_ID" />
+        app:layout_constraintTop_toBottomOf="@+id/ed_sign_in_ID" />
 
 
     <Button
@@ -52,13 +75,13 @@
         android:layout_width="match_parent"
         android:layout_height="45sp"
         android:layout_margin="20sp"
-        android:textSize="20sp"
+        android:background="@drawable/togglebtn_sign_in_round"
         android:text="@string/btn_SignIn"
         android:textColor="@color/colorWhite"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/togglebtn_sign_in_round"
-        app:layout_constraintTop_toBottomOf="@+id/sign_in_PW"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_sign_in_PW"
         tools:layout_editor_absoluteX="-9dp" />
 
 
