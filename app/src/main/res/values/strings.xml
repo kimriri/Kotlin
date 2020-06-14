@@ -3,6 +3,10 @@
 
     <!-- SingIn -->
     <string name="app_name">RxKotlin</string>
-    <string name="SignInID">아이디</string>
+    <string name="edSignInID">아이디</string>
+    <string name="edSignInPW">비밀번호</string>
+    <string name="tvSignInID">아이디를 입력해 주세요.</string>
+    <string name="tvSignInPW">비밀번호를 입력해 주세요.</string>
     <string name="btn_SignIn">로그인</string>
+
 </resources>
