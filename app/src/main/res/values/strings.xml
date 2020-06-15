@@ -9,4 +9,15 @@
     <string name="tvSignInPW">비밀번호를 입력해 주세요.</string>
     <string name="btn_SignIn">로그인</string>
 
+
+    <!-- SingUp -->
+    <string name="tvSignUpID_Error">올바른 이메일 형식을 사용해 주세요</string>
+    <string name="btn_SignUp">회원가입</string>
+    <string name="edSignUpNickname">사용할 별명을 입력해 주세요.</string>
+    <string name="tv_SingUp_nickname">사용할 닉네임을 입력해 주세요.</string>
+    <string name="tv_SingUp_nickname_check">이미 사용중인 닉네임 입니다.</string>
+    <string name="tvSignUpID">이메일을 입력해 주세요.</string>
+    <string name="tv_SignIn_goSignUp">회원가입</string>
+    <string name="tv_SignIn_find_pw">비밀번호 찾기</string>
+
 </resources>
