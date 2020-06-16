@@ -19,5 +19,6 @@
     <string name="tvSignUpID">이메일을 입력해 주세요.</string>
     <string name="tv_SignIn_goSignUp">회원가입</string>
     <string name="tv_SignIn_find_pw">비밀번호 찾기</string>
+    <string name="tvSignInPWError">비밀번호는 8자리 이상 입력해 주세요.</string>
 
 </resources>

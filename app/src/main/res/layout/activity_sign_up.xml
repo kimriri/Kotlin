@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/tv_sign_in_nickname"
+        android:id="@+id/tv_sign_up_nickname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -20,7 +20,7 @@
 
 
     <TextView
-        android:id="@+id/tv_sign_in_nickname_check"
+        android:id="@+id/tv_sign_up_nickname_check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -48,7 +48,7 @@
 
 
     <TextView
-        android:id="@+id/tv_sign_in_ID"
+        android:id="@+id/tv_sign_up_ID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -59,7 +59,7 @@
         app:layout_constraintStart_toStartOf="@+id/ed_sign_up_ID" />
 
     <TextView
-        android:id="@+id/tv_sign_in_ID_error"
+        android:id="@+id/tv_sign_up_ID_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -90,9 +90,21 @@
         android:id="@+id/tv_sign_up_PW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_marginBottom="10dp"
         android:text="@string/tvSignInPW"
+        android:textColor="@color/colorErrorRed"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/ed_sign_up_PW"
+        app:layout_constraintStart_toStartOf="@+id/ed_sign_up_PW" />
+
+
+    <TextView
+        android:id="@+id/tv_sign_up_PW_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:visibility="invisible"
+        android:text="@string/tvSignInPWError"
         android:textColor="@color/colorErrorRed"
         android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/ed_sign_up_PW"

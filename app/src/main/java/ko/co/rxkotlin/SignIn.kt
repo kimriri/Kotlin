@@ -15,6 +15,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.combineLatest
 import io.reactivex.subjects.BehaviorSubject
+import kotlinx.android.synthetic.main.activity_sign_in.*
 
 
 class SignIn : AppCompatActivity() {
@@ -47,15 +48,15 @@ class SignIn : AppCompatActivity() {
         edSignInPw.doOnTextChanged { text, _, _, _ -> mPWBehaviorSubject.onNext(text.toString()) }
 
 
-        behaviorSubject.buffer(2, 1)
-            .map { it[0] to it[1] }
-            .subscribe {
-                if (it.second - it.first < 2000L) {
-                    super.onBackPressed()
-                } else {
-                    Toast.makeText(this, "한번더 누르면 앱을 종료 합니다. ", Toast.LENGTH_SHORT).show()
-                }
-            }.addTo(compositeDisposable)
+//        behaviorSubject.buffer(2, 1)
+//            .map { it[0] to it[1] }
+//            .subscribe {
+//                if (it.second - it.first < 2000L) {
+//                    super.onBackPressed()
+//                } else {
+//                    Toast.makeText(this, "한번더 누르면 앱을 종료 합니다. ", Toast.LENGTH_SHORT).show()
+//                }
+//            }.addTo(compositeDisposable)
 
         val edSignInIDCheck = edSignInId.textChanges()
             .filter { it.length <= 1 }
@@ -82,8 +83,6 @@ class SignIn : AppCompatActivity() {
                 } else {  // 값이 있을때
                     Log.d("asdf", "값이 있음 ")
                     tvSignInPw.visibility = View.INVISIBLE
-
-
                 }
             }, {
                 it.printStackTrace()
@@ -109,11 +108,10 @@ class SignIn : AppCompatActivity() {
             startActivity(intent)
         })
 
+
         tvSignInFindPw.setOnClickListener(View.OnClickListener {
-            val intent = Intent(this,activity_find_pw::class.java)
-            stsartActivity(intent)
-
-
+            val intent = Intent(this, FindPw::class.java)
+            startActivity(intent)
         })
     }
 
