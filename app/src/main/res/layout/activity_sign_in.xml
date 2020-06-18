@@ -77,7 +77,7 @@
         android:layout_width="match_parent"
         android:layout_height="45sp"
         android:layout_margin="20sp"
-        android:background="@drawable/togglebtn_sign_in_round"
+        android:background="@drawable/togglebtn_round"
         android:text="@string/btn_SignIn"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"

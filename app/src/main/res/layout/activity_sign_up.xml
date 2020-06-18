@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="20dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:hint="@string/edSignUpNickname"
@@ -130,14 +130,13 @@
         android:layout_width="match_parent"
         android:layout_height="45sp"
         android:layout_margin="20sp"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/togglebtn_sign_in_round"
-        android:text="@string/btn_SignUp"
+        android:background="@drawable/togglebtn_round"
+        android:text="@string/btn_SignIn"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_sign_up_PW" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

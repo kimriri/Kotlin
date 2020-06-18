@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
 import com.jakewharton.rxbinding3.widget.textChanges
@@ -15,7 +14,6 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.combineLatest
 import io.reactivex.subjects.BehaviorSubject
-import kotlinx.android.synthetic.main.activity_sign_in.*
 
 
 class SignIn : AppCompatActivity() {
@@ -47,6 +45,16 @@ class SignIn : AppCompatActivity() {
         edSignInId.doOnTextChanged { text, _, _, _ -> mIDBehaviorSubject.onNext(text.toString()) }
         edSignInPw.doOnTextChanged { text, _, _, _ -> mPWBehaviorSubject.onNext(text.toString()) }
 
+        listOf(mIDBehaviorSubject, mPWBehaviorSubject).combineLatest {
+            it.fold(true, { t1, t2 -> t1 && t2.isNotEmpty() })
+
+        }.subscribe {
+            if (it == false) {
+                btnSignInConfirm.setBackgroundResource(R.drawable.togglebtn_round_f)
+            } else {
+                btnSignInConfirm.setBackgroundResource(R.drawable.togglebtn_round)
+            }
+        }.addTo(compositeDisposable)
 
 //        behaviorSubject.buffer(2, 1)
 //            .map { it[0] to it[1] }
@@ -90,17 +98,6 @@ class SignIn : AppCompatActivity() {
         compositeDisposable.add(edSignInPWCheck)
 
 
-        listOf(mIDBehaviorSubject, mPWBehaviorSubject).combineLatest {
-            it.fold(true, { t1, t2 -> t1 && t2.isNotEmpty() })
-
-        }.subscribe {
-            if (it == false) {
-                btnSignInConfirm.setBackgroundResource(R.drawable.togglebtn_sign_in_round_f)
-            } else {
-                btnSignInConfirm.setBackgroundResource(R.drawable.togglebtn_sign_in_round)
-            }
-            btnSignInConfirm.isEnabled = it
-        }.addTo(compositeDisposable)
 
 
         tvSignInGoSignUp.setOnClickListener(View.OnClickListener {
@@ -113,8 +110,13 @@ class SignIn : AppCompatActivity() {
             val intent = Intent(this, FindPw::class.java)
             startActivity(intent)
         })
-    }
 
+        btnSignInConfirm.setOnClickListener(View.OnClickListener {
+
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        })
+    }
 
     override fun onBackPressed() {
         behaviorSubject.onNext(System.currentTimeMillis())
